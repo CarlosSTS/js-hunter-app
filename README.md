@@ -8,8 +8,8 @@ O app contém os seguintes módulos
 * Uma tela de detalhe que abre uma webView para mostrar mais detalhes do produto
  > Um loading foi criado para o carregamento das informações.
 
-## Veja do sistema no LinkedIn
-* [Explicação do sistema](https://www.linkedin.com/posts/carlos-ferreira-4b2ba219a_dupliquei-o-started-da-rocketseat-com-knexjs-activity-6692569290979209216-qnw2)
+## Veja no LinkedIn
+* [Ir para o LinkedIn](https://www.linkedin.com/posts/carlos-ferreira-4b2ba219a_dupliquei-o-started-da-rocketseat-com-knexjs-activity-6692569290979209216-qnw2)
 
 ## páginas
 ![Foto do App dashboard](https://github.com/CarlosSTS/Skaylab/blob/master/assets/dashboard.jpg)
