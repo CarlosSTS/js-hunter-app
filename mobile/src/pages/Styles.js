@@ -1,5 +1,4 @@
-import {StyleSheet} from 'react-native';
-
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
@@ -10,21 +9,22 @@ export default StyleSheet.create({
         padding: 20
     },
     productContainer: {
-
         backgroundColor: "#fff",
         borderWidth: 1,
         borderRadius: 5,
         padding: 20,
         marginBottom: 20,
-
     },
-
+    info : {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
     productTitle: {
         fontSize: 18,
         fontWeight: "bold",
-        color: "#333"
+        color: "#333",
+        paddingHorizontal: 4,
     },
-
     productDescription: {
         fontSize: 16,
         color: "#999",
@@ -41,10 +41,14 @@ export default StyleSheet.create({
         alignItems: "center",
         marginTop: 10
     },
-
     productButtonText: {
         fontSize: 16,
         color: "#da552f",
         fontWeight: "bold"
-    }
+    },
+    loading: {
+        position: 'absolute',
+        alignSelf: 'center',
+        marginTop: '50%'
+     }
 })

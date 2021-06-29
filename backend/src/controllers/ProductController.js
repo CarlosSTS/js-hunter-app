@@ -29,14 +29,14 @@ module.exports = {
 
     //PRODUCT ESPECIFICO
     async index(req, res) {
-        const { id } = req.params;
-        const product_id = await connection('product')
-            .where('id', id)
+        const { title } = req.params;
+        const product_title = await connection('product')
+            .where('title', title)
             .select('*')
 
-        if (!product_id)
-            return res.status(400).json({ error: 'No product found with this ID' })
-        return res.json(product_id)
+        if (!product_title)
+            return res.status(400).json({ error: 'No product found with this title' })
+        return res.json(product_title)
     },
     //DELETANDO PRODUCT
     async delete(req, res) {
@@ -49,7 +49,7 @@ module.exports = {
             .select('title')
             .first();
 
-        if (product.title != title) {
+        if (product.title !== title) {
             return res.status(401).json({ error: 'Operation not permitted.' })
         }
         await connection('product').where('id', id).delete()
