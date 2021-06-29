@@ -2,7 +2,6 @@ const connection = require('../database/connection');
 
 module.exports = {
 
-    //CRIANDO PRODUCT
     async create(req, res) {
         const { title, description, url } = req.body;
         const [id] = await connection('product').insert({
@@ -13,7 +12,6 @@ module.exports = {
 
         return res.json([id]);
     },
-        //TODOS OS PRODUCT
     async show(req, res) {
         const { page = 1 } = req.query;
         const [count] = await connection('product').count();
@@ -27,7 +25,6 @@ module.exports = {
         return res.json(product);
     },
 
-    //PRODUCT ESPECIFICO
     async index(req, res) {
         const { title } = req.params;
         const product_title = await connection('product')
@@ -38,7 +35,6 @@ module.exports = {
             return res.status(400).json({ error: 'No product found with this title' })
         return res.json(product_title)
     },
-    //DELETANDO PRODUCT
     async delete(req, res) {
 
         const { id } = req.params;
