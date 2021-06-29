@@ -1,5 +1,5 @@
 # Skaylab
-* Um aplicativo para adionar tecnologias e afins.
+* Um aplicativo para adicionar tecnologias e afins.
 ## módulos
 
 O app contém os seguintes módulos
