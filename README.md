@@ -1,4 +1,4 @@
-# Skaylab
+# Js-hunter-app
 * Um aplicativo para adicionar tecnologias e afins.
 ## módulos
 
