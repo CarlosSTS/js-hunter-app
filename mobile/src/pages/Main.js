@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, TouchableOpacity, Alert, ActivityIndicator, TextInput } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Alert, ActivityIndicator, TextInput, SafeAreaView } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { Feather } from '@expo/vector-icons'
 import api from "../services/api";
@@ -10,34 +10,38 @@ export default function Main({ navigation }) {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [loadingDelete, setLoadingDelete] = useState(false);
+  const [loadingDelete, setLoadingDelete] = useState({ loading: false, id: null });
 
   async function loadProducts() {
-    if (loading) {
-      return;
+    try {
+      if (loading) {
+        return;
+      }
+
+      if (total > 0 && product.length === total) {
+        return;
+      }
+      setLoading(true);
+
+      const response = await api.get("product", {
+        params: { page },
+      });
+
+      setProduct([...product, ...response.data]);
+      setTotal(response.headers["x-total-count"]);
+      setPage(page + 1);
+      setLoading(false);
+    } catch (error) {
+
     }
-
-    if (total > 0 && product.length === total) {
-      return;
-    }
-    setLoading(true);
-
-    const response = await api.get("product", {
-      params: { page },
-    });
-
-    setProduct([...product, ...response.data]);
-    setTotal(response.headers["x-total-count"]);
-    setPage(page + 1);
-    setLoading(false);
   }
 
   useEffect(() => {
     loadProducts();
   }, []);
 
-  async function deleteProduct(id,title) {
-    setLoadingDelete(true)
+  async function deleteProduct(id, title) {
+    setLoadingDelete({ loading: true, id })
     try {
       await api.delete(`product/${id}`, {
         headers: {
@@ -48,10 +52,10 @@ export default function Main({ navigation }) {
     } catch (err) {
       Alert.alert('Ooops...', `Não foi possivel deletar: ${product.title}`)
     } finally {
-      setLoadingDelete(false)
+      setLoadingDelete({ loading: false, id: null })
     }
   }
-  
+
   return (
     <>
       <Text style={styles.productTitle}>
@@ -70,14 +74,13 @@ export default function Main({ navigation }) {
             <View style={styles.info}>
               <Text style={styles.productTitle}>{product.id})</Text>
               <Text style={styles.productTitle}>{product.title}</Text>
-           
-              <RectButton onPress={() => deleteProduct(product.id,product.title )}>
-                {loadingDelete === true ? <ActivityIndicator color='#ea552f' size='small' /> :
+              <RectButton onPress={() => deleteProduct(product.id, product.title)}>
+                {loadingDelete.loading && loadingDelete.id === product.id ? <ActivityIndicator color='#ea552f' size='small' /> :
                   <Feather name='trash-2' size={24} color="#ea552f" />
                 }
               </RectButton>
             </View>
-            <Text style={styles.productDescription}>{product.description}</Text>
+            <Text style={styles.productDescription} numberOfLines={3}>{product.description}</Text>
 
             <TouchableOpacity
               activeOpacity={0.7}
