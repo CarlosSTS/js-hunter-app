@@ -18,15 +18,15 @@ O app contém os seguintes módulos
 
 <table>
   <tr>
-<td><img src="https://github.com/CarlosSTS/Skaylab/blob/master/assets/dashboard.png" alt="Foto do App dashboard" width="360" /></td>
-<td><img src="https://github.com/CarlosSTS/Skaylab/blob/master/assets/delete.png" alt="Foto do App delete" width="360" /></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-web-7fbff.appspot.com/o/github_projects%2Fjs-hunter-app%2Fdashboard.png?alt=media&token=cf3fe3a3-9066-4170-b05b-76c7d7c5a874" alt="Foto do App dashboard" width="360" /></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-web-7fbff.appspot.com/o/github_projects%2Fjs-hunter-app%2Fdelete.png?alt=media&token=eb5bb656-84e5-44a2-b506-794143ae512a" alt="Foto do App delete" width="360" /></td>
 </tr>
 </table>
 
 <table>
   <tr>
-<td><img src="https://github.com/CarlosSTS/Skaylab/blob/master/assets/loading.png" alt="Foto do App loading" width="360" /></td>
-<td><img src="https://github.com/CarlosSTS/Skaylab/blob/master/assets/webView.png" alt="Foto do App webView" width="360" /></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-web-7fbff.appspot.com/o/github_projects%2Fjs-hunter-app%2Floading.png?alt=media&token=a12d0503-7ee7-45a5-9df3-af56828d8203" alt="Foto do App loading" width="360" /></td>
+<td><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-web-7fbff.appspot.com/o/github_projects%2Fjs-hunter-app%2FwebView.png?alt=media&token=262126f7-9ea1-48d0-a51b-0fa5bf42deee" alt="Foto do App webView" width="360" /></td>
 </tr>
 </table>
 
@@ -34,7 +34,7 @@ O app contém os seguintes módulos
 
 RODANDO O PROJETO MOBILE
 
-- yarn install => para instalar as Dependências do projeto
+- yarn install => para instalar as dependências do projeto
 - yarn start => para inicializar o projeto
 - yarn android => para executar o projeto no emulador android
 - yarn ios => Para executar no emulador iOS
@@ -43,7 +43,7 @@ RODANDO O PROJETO MOBILE
 
 RODANDO O PROJETO NO BACKEND
 
-- yarn install => para instalar as Dependências do projeto
+- yarn install => para instalar as dependências do projeto
 - yarn start => para inicializar o projeto
 
 ## Feito por
